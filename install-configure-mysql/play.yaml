@@ -1,0 +1,9 @@
+---
+- name: Install and Configure mysql server
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Install and configure MYSQL using custom module
+      install_config_mysql:
+        max_connections: 200
+        bind_address: "0.0.0.0"
